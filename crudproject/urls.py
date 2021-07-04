@@ -25,4 +25,9 @@ urlpatterns = [
     path('', crudapp.views.home, name="home"),
     path('blog/<int:blog_id>', crudapp.views.detail, name="detail"),
     path('accounts/',include('accounts.urls')),
+    path('blog/new', crudapp.views.new, name='new'),
+    path('blog/postcreate', crudapp.views.postcreate, name='postcreate'),
+    path('blog/edit', crudapp.views.edit, name='edit'),
+    path('blog/postupdate/<int:blog_id>', crudapp.views.postupdate, name='postupdate'),
+    path('blog/postdelete/<int:blog_id>',crudapp.views.postdelete, name='postdelete'),
 ]
