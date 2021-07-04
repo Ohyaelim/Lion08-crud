@@ -16,10 +16,13 @@ Including another URLconf
 from os import name
 from django.contrib import admin
 from django.urls import path
+from django.urls.conf import include
 import crudapp.views
+import accounts.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', crudapp.views.home, name="home"),
     path('blog/<int:blog_id>', crudapp.views.detail, name="detail"),
+    path('accounts/',include('accounts.urls')),
 ]
